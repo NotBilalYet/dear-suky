@@ -1,3 +1,16 @@
 body {
 	background-color: #FD6C9E;
 }
+
+.container {
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	height: 100vh; 
+}
+
+.centered-div {
+	height: 300px;
+	width: 300px;
+	border: solid;
+}
