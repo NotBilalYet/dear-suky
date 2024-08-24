@@ -28,3 +28,12 @@ body {
 .rotate {
 	animation: rotate 23s linear infinite;
 }
+
+.fade {
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+
+.faded {
+	opacity: 0;
+}
