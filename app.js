@@ -1,4 +1,5 @@
-const fadeSvg = document.querySelector('.fade');
+const box1 = document.getElementById('box-1');
+const box2 = document.getElementById('box-2');
 
 const adjectives = [
     'Amazing.',
@@ -32,15 +33,16 @@ function displayAdjectives() {
         if (index < adjectives.length) {
             document.getElementById('adjective').innerText = adjectives[index++];
             setTimeout(showNextAdjective, 1000);
+        } else {
+            box2.classList.add('faded');
         }
     }
     
     showNextAdjective();
 }
 
-
 function startFadeAndAdjectives() {
-    fadeSvg.classList.add('faded');
+    box1.classList.add('faded');
     displayAdjectives();
 }
 
