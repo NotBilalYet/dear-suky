@@ -35,6 +35,7 @@ function displayAdjectives() {
             setTimeout(showNextAdjective, 1000);
         } else {
             box2.classList.add('faded');
+            setTimeout(createHearts, 500);
         }
     }
     
@@ -44,6 +45,22 @@ function displayAdjectives() {
 function startFadeAndAdjectives() {
     box1.classList.add('faded');
     displayAdjectives();
+}
+
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+    heart.innerText = '❤️';
+    document.body.appendChild(heart);
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+function createHearts() {
+    setInterval(createHeart, 300);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
