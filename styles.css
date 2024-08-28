@@ -17,21 +17,23 @@ body {
     position: absolute;
     height: 350px;
     width: 350px;
-    border: solid;
     margin: 10px;
     opacity: 1;
 }
 
 #box-1 {
     z-index: 1;
+    opacity: 1;
 }
 
 #box-2 {
     z-index: 2;
+    opacity: 0;
 }
 
 #box-3 {
     z-index: 3;
+    opacity: 0;
 }
 
 @keyframes rotate {
