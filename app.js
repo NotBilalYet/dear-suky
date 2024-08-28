@@ -51,6 +51,7 @@ function displayAdjectives() {
 
 function startFadeAndAdjectives() {
     box1.classList.add('faded');
+    document.body.style.pointerEvents = 'none';
     setTimeout(() => {
         box1.style.opacity = 0;
         setTimeout(() => {
