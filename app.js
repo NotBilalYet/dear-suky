@@ -1,6 +1,7 @@
 const box1 = document.getElementById('box-1');
 const box2 = document.getElementById('box-2');
 const box3 = document.getElementById('box-3');
+const tap = document.getElementById('tap');
 
 const adjectives = [
     'Amazing.',
@@ -50,10 +51,10 @@ function displayAdjectives() {
 }
 
 function startFadeAndAdjectives() {
-    box1.classList.add('faded');
     document.body.style.pointerEvents = 'none';
     setTimeout(() => {
         box1.style.opacity = 0;
+        tap.remove();
         setTimeout(() => {
             box2.style.opacity = 1;
             displayAdjectives();
