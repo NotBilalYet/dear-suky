@@ -19,7 +19,6 @@ body {
     height: 350px;
     width: 350px;
     margin: 10px;
-    opacity: 1;
 }
 
 #box-1 {
@@ -35,15 +34,6 @@ body {
 #box-3 {
     z-index: 3;
     opacity: 0;
-}
-
-@keyframes rotate {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
 }
 
 .rotate {
@@ -71,23 +61,6 @@ body {
   	font-style: normal;
 }
 
-.heart {
-  position: fixed;
-  font-size: 1.5rem;
-  top: -1vh;
-  transform: translateY(0);
-  animation: fall 3s linear forwards;
-}
-
-@keyframes fall {
-  from {
-     transform: translateY(0vh) translateX(-10vw); 
-  }
-  to {
-     transform: translateY(105vh) translateX(10vw); 
-  }
-}
-
 #tap {
     position: absolute;
     top: 82.5%;
@@ -103,6 +76,15 @@ body {
     animation: blink-animation 2s infinite;
 }
 
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 @keyframes blink-animation {
     0%, 100% {
         opacity: 1;
@@ -110,4 +92,26 @@ body {
     50% {
         opacity: 0;
     }
+}
+
+/* 
+falling hearts credit.
+https://codepen.io/shubhamsingh718356/pen/PoGNVBb
+*/
+
+@keyframes fall {
+  from {
+     transform: translateY(0vh) translateX(-10vw); 
+  }
+  to {
+     transform: translateY(105vh) translateX(10vw); 
+  }
+}
+
+.heart {
+  position: fixed;
+  font-size: 1.5rem;
+  top: -1vh;
+  transform: translateY(0);
+  animation: fall 3s linear forwards;
 }

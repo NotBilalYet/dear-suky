@@ -28,6 +28,19 @@ const adjectives = [
     'Sincere.'
 ];
 
+function startFadeAndAdjectives() {
+    document.body.style.pointerEvents = 'none';
+    
+    setTimeout(() => {
+        box1.style.opacity = 0;
+        tap.remove();
+        setTimeout(() => {
+            box2.style.opacity = 1;
+            displayAdjectives();
+        }, 500);
+    }, 500);
+}
+
 function displayAdjectives() {
     let index = 0;
 
@@ -50,17 +63,15 @@ function displayAdjectives() {
     showNextAdjective();
 }
 
-function startFadeAndAdjectives() {
-    document.body.style.pointerEvents = 'none';
-    setTimeout(() => {
-        box1.style.opacity = 0;
-        tap.remove();
-        setTimeout(() => {
-            box2.style.opacity = 1;
-            displayAdjectives();
-        }, 500);
-    }, 500);
-}
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('click', startFadeAndAdjectives);
+    document.body.addEventListener('touchstart', startFadeAndAdjectives);
+});
+
+/*
+falling hearts credit.
+https://codepen.io/shubhamsingh718356/pen/PoGNVBb
+*/
 
 function createHeart() {
     const heart = document.createElement('div');
@@ -77,8 +88,3 @@ function createHeart() {
 function createHearts() {
     setInterval(createHeart, 300);
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    document.body.addEventListener('click', startFadeAndAdjectives);
-    document.body.addEventListener('touchstart', startFadeAndAdjectives);
-});
